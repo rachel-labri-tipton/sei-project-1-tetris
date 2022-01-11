@@ -16,13 +16,16 @@ objects
 
 
 
+
 Phase I: I set up the grid and figure out how to move the object down the grid. Maybe setInterval before or after to play around with it or could add movement in after set interval. 
+
+Set up Tetrominoes 
     / Event Listeners: 
     / KeyRight(moves the object to the right)
     / KeyLeft (moves the object to the left)
     /KeyUp (rotates the object)
     /KeyDown (moves object immediately to the bottom of the grid)
-    detectCollisions of one object with the next 
+    detectCollisions of one object with the next (assign class taken )
     clearBottomLine (clears bottom line and adds 100 points to the score)
     Reset Function
     Reset Button 
