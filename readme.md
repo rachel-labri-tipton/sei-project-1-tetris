@@ -51,3 +51,12 @@ Phase V: creating the random object generator
 
 Stretch Goals: if I have time, make a fourth object
                add cool sound to the game 
+
+Functions to Write on Wednesday:
+Fix git-hub situation
+Get moveLeft/moveRight/rotationFunction working
+Use splice() to clear the bottom row 
+Add Score 
+
+Thursday: Work on Design
+
