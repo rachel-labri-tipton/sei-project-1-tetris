@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+  <file name="Tetris.mp3" source="original">
+    <format>VBR MP3</format>
+    <md5>4ae866dc425a9904e84252322ec8413b</md5>
+    <mtime>1275331590</mtime>
+    <size>1340845</size>
+    <crc32>84291a86</crc32>
+    <sha1>98464f59af2f91f4cd30063634037fece4144c68</sha1>
+    <length>83.8</length>
+    <height>0</height>
+    <width>0</width>
+    <external-identifier>urn:acoustid:801e79d2-19cf-4792-88ee-739e882a394d</external-identifier>
+  </file>
+  <file name="Tetris.ogg" source="derivative">
+    <format>Ogg Vorbis</format>
+    <original>Tetris.mp3</original>
+    <md5>85a3593e50c2f95fd539f981862d1ff7</md5>
+    <mtime>1275331615</mtime>
+    <size>1018742</size>
+    <crc32>102ca81a</crc32>
+    <sha1>ec5b940004961937c56f21193e49b679d518d5a7</sha1>
+    <length>83.41</length>
+    <height>0</height>
+    <width>0</width>
+  </file>
+  <file name="Tetris.png" source="derivative">
+    <format>PNG</format>
+    <original>Tetris.mp3</original>
+    <mtime>1414826577</mtime>
+    <size>11351</size>
+    <md5>280dcf426092737fc01d2055528d1e27</md5>
+    <crc32>8f9cea42</crc32>
+    <sha1>b2e92a69adc5720cbb3bbec28e53254a1941859c</sha1>
+  </file>
+  <file name="TetrisThemeMusic_archive.torrent" source="metadata">
+    <btih>aa423eae235a53840ca42c2a2e40a3a3f5a3603b</btih>
+    <mtime>1640694084</mtime>
+    <size>2047</size>
+    <md5>90c9895d3b5937f3b261eb14ad5b70e9</md5>
+    <crc32>11f724bb</crc32>
+    <sha1>e04ee09af206079f6301bbad7a6f2b33f0757d7e</sha1>
+    <format>Archive BitTorrent</format>
+  </file>
+  <file name="TetrisThemeMusic_files.xml" source="original">
+    <format>Metadata</format>
+    <md5>977f73f78db8690663295a66c5c8c851</md5>
+    <summation>md5</summation>
+  </file>
+  <file name="TetrisThemeMusic_meta.xml" source="original">
+    <format>Metadata</format>
+    <mtime>1613725210</mtime>
+    <size>646</size>
+    <md5>4e33bfbcd0a61f5bac36b13dde041edc</md5>
+    <crc32>9eb4ed8d</crc32>
+    <sha1>5124d1dd8db4ff634eb538e91614b27d0d6d63d5</sha1>
+  </file>
+  <file name="TetrisThemeMusic_reviews.xml" source="original">
+    <mtime>1640694081</mtime>
+    <size>550</size>
+    <md5>f6e8975ca5f87cd03c7385ed9ed0ff8a</md5>
+    <crc32>91ebf7bb</crc32>
+    <sha1>00bd66a00f56e635c03bc590641866c48aaf0ca8</sha1>
+    <format>Metadata</format>
+  </file>
+  <file name="__ia_thumb.jpg" source="original">
+    <mtime>1640694083</mtime>
+    <size>3271</size>
+    <md5>ef327072dbf41e60a9b39209ae3be19f</md5>
+    <crc32>dd43abf8</crc32>
+    <sha1>4203a7908b2bc2f726e4d791cc564258b0e70ffc</sha1>
+    <format>Item Tile</format>
+    <rotation>0</rotation>
+  </file>
+</files>

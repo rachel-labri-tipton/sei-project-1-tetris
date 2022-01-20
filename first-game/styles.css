@@ -1,0 +1,109 @@
+
+* {
+    font-family: Manaspace, monospace;
+}
+
+
+body {
+   background-color: #f1f3b8;
+}
+
+h1 {
+  font-size: 70px; 
+}
+h2 {
+  font-size: 60px;
+}
+ p {
+   font-size: 42px; 
+ }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    width: 80vw;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.grid {
+  display: flex;
+  width: 400px;
+  height: 800px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  background-color: #00587a;
+}
+
+.grid div {
+  height: 40px;
+  width: 40px;
+}
+
+.score-board {
+  margin-left: 40px;
+}
+
+.mini-grid {
+  display: flex;
+  height: 100px;
+  width: 200px;
+  flex-wrap: wrap; 
+}
+
+.mini-grid div {
+  height: 20px;
+  width: 20px;
+  border-color: black;
+  background-color: #7b99fa;
+}
+
+
+
+.menu-buttons button {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* .mini-grid {
+  display: flex;
+  width: 100px;
+  height: 200px;
+  flex-direction: row;
+  background-color: #00587a
+} */
+
+/* .game-board {
+  border: solid 2px;
+} */
+ 
+.btn {
+  background-color: #96eab7;
+  color: black;
+  border-style: 2px solid;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: arrow;
+  margin: 10px; 
+}
+
+.pieces {
+  background-color: #53cdd8;
+}
+
+
+
+/* .first-color { 
+	background: #7b99fa; 
+}
+	
+.second-color { 
+	background: #53cdd8; 
+}
+
+.third-color { 
+	background: #96eab7; 
+}
+
+.fourth-color { 
+	background: #f1f3b8;  */
