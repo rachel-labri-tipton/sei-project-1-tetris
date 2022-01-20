@@ -1,6 +1,6 @@
 // Tetris 2.022
 
-Hi there, this is my first full coding project completed for the the General Assembly Software Engineering Part-Time Bootcamp (Nov 2021 - May 2022). 
+Hi there, this is my first full coding project completed for the the General Assembly Software Engineering Immersive Flex Bootcamp (Nov 2021 - May 2022). 
 
 Tetris is a classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might of played it on your GameBoy. The game requires players to rotate and move falling Tetris pieces, tetriminoes (each piece is made of 4 blocks). Players clear lines by completing horizontal rows of blocks without empty cells. If the pieces reach the top, the game is over. 
 
