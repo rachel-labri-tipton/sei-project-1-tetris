@@ -71,9 +71,7 @@ let currentPiece = gamePieces[randomPiece][currentRotation]
 
 
 
-
-//function drawPiece() is a function that draws the first iteration of the first piece of the first array
-//function that selects a random iteration of the piece 
+//function drawPiece() is a function that draws the first iteration of the first piece of the first array and a function that selects a random iteration of the piece 
 function drawPiece() {
         currentPiece.forEach(index => {
             squares[currentPosition + index].classList.add("pieces")
@@ -81,6 +79,7 @@ function drawPiece() {
         })
 }
 
+//undrawPiece() removes the piece from where it was on the grid by removing the class "pieces"
 function undrawPiece() {
     currentPiece.forEach(index=> {
         squares[currentPosition + index].classList.remove("pieces")
@@ -141,12 +140,6 @@ function rotatePiece () {
     drawPiece()
 }
 // this is the sound functionality. I feel like this might be a bit repetitive, but it was working, so I left it as it was. 
-
-function onContact (event) {
-        const audio = document.createElement("audio")
-        audio.src = "audio files /cool-click-tone.wav"
-        audio.play()
-    }
 
 
  function winSnd (event) {
@@ -321,7 +314,8 @@ function checkRotatedPiece(P)
       drawPiece()
       timerId = setInterval(moveDownScreen, 200)
       nextRandom = Math.floor(Math.random()*gamePieces.length)
-    }}
+    }
+    }
     
     level3Btn.addEventListener("click", levelUp3)
 
@@ -340,17 +334,18 @@ function checkRotatedPiece(P)
   lines = 0
   scoreBoard.innerHTML = score
   lineCount.innerHTML = lines
+
  }
 
 
   function resetGame() {
     if (timerId) {
       undrawBoard()
+      winLoseMessage.innerHTML = "Let's Play!"
     }
     } 
   
   resetBtn.addEventListener("click", resetGame)
-
 
 
   function endGame() {
@@ -358,13 +353,13 @@ function checkRotatedPiece(P)
     {
       clearInterval(timerId)
       gameOverLose()
-       winLoseMessage.innerHTML = `Game over. You scored ${score} points and created ${lines} lines. Wanna try again? Click "Reset Board" then your chosen level button twice. `
+       winLoseMessage.innerHTML = `Game over. You scored ${score} points and created ${lines} lines. You need ${10-lines} more lines to complete this level. Wanna try again? Click "Reset Board" then your chosen level button twice. `
   }
       else if (score===1000) 
       {
         clearInterval(timerId)
-        winSnd()}
-        winLoseMessage.innerHTML = `Amazing! You completed a level. Have a go at the next level!`
+        winSnd()
+        winLoseMessage.innerHTML = `Amazing! You completed a level. You scored ${score} points and created ${lines} lines. Have a go at the next level! Click "Reset Board" then your chosen level button twice.`
       }
       }
 
