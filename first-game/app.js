@@ -1,15 +1,17 @@
 
+//variables for the game. the game is set up as a grid 
 const grid = document.querySelector(".grid")
 let squares = Array.from(document.querySelectorAll(".grid div"))
 const scoreBoard= document.querySelector("#score")
 let lineCount= document.querySelector("#lines")
 let level= document.querySelector("#level")
-const levelCount=document.querySelector("#level-2")
 const startBtn = document.querySelector(".play-button")
 const resetBtn = document.querySelector(".reset-button")
 const soundBtn = document.querySelector(".sound-button")
+const stopAudioBtn = document.querySelector(".sound-off-button")
 const level2Btn = document.querySelector(".level-two")
- const level3Btn=document.querySelector(".level-three")
+const level3Btn=document.querySelector(".level-three")
+const winLoseMessage = document.querySelector(".win-lose-message")
 const rowLength = 10
 let nextRandom = 0
 let timerId 
@@ -23,7 +25,7 @@ let color = [
 ]
 
 
-//the Pieces are set up with a series of arrays so all orientations of the pieces are housed in one constant/ the version of the piece that appears at the start of its journey down the screen will be index[0]
+//the Pieces are set up with a series of arrays mapped onto the array of divs in the grid. the Pieces are continuously redrawn on the board so all orientations of the pieces are housed in one constant/ the version of the piece that appears at the start of its journey down the screen will be index[0].  
 
 const lPiece =  [
     [1, rowLength+1, rowLength*2+1, 2], 
@@ -70,7 +72,7 @@ let currentPiece = gamePieces[randomPiece][currentRotation]
 
 
 
-//function that draws the first iteration of the first piece of the first array
+//function drawPiece() is a function that draws the first iteration of the first piece of the first array
 //function that selects a random iteration of the piece 
 function drawPiece() {
         currentPiece.forEach(index => {
@@ -86,7 +88,6 @@ function undrawPiece() {
     })
     console.log(squares)
 }
-
 
 
 function moveDownScreen() {
@@ -139,7 +140,7 @@ function rotatePiece () {
     checkRotatedPiece()
     drawPiece()
 }
-// sound functionality 
+// this is the sound functionality. I feel like this might be a bit repetitive, but it was working, so I left it as it was. 
 
 function onContact (event) {
         const audio = document.createElement("audio")
@@ -160,17 +161,16 @@ function onContact (event) {
         audio.play()
     }
 
-    // function movePieceDwnSnd ()
     function rotatePieceSnd (event) {
       const audio = document.createElement("audio")
         audio.src = "audio files /melodic-click.wav"
         audio.play()
     }
-// function dropPieceSnd (event) {
-//   const audio = document.createElement("audio")
-//         audio.src = "audio files /cool-click-tone.wav"
-//         audio.play()
-// }
+function dropPieceSnd (event) {
+  const audio = document.createElement("audio")
+        audio.src = "audio files /cool-click-tone.wav"
+        audio.play()
+}
 
     function gameOverApplause(event) {
         const audio = document.createElement("audio")
@@ -189,39 +189,38 @@ function onContact (event) {
         audio.play()
     }
 
-    function playTheme (event) {
-
-      const audio = document.createElement("audio")
-      audio.src = "audio files /Tetris.mp3"
-      audio.play()
-      soundBtn.innerHTML = "Stop Theme"
-      togglePlay()
+  function playAudio (event) {
+      const themeSong = document.createElement("audio")
+      themeSong.src = "audio files /Tetris.mp3"
+      themeSong.play()
     }
 
-    function togglePlay() {
-       return audio.paused ? audio.play() : audio.pause()
-    }
-    soundBtn.addEventListener("click", playTheme)
+   soundBtn.addEventListener("click", playAudio)
 
-
-    // function scoreSnd()
 
 function keyControls (e) {
-    if (e.keyCode===37) {
+    if (e.keyCode===37) 
+    {
         moveLeft()
         movePieceSnd ()
-        // pieceMovementSound()
-    } else if (e.keyCode===38) {
+
+    } 
+    else if (e.keyCode===38) 
+    {
         rotatePiece()
         rotatePieceSnd ()
        
-    } else if (e.keyCode===39) {
+    } 
+    else if (e.keyCode===39) 
+    {
         moveRight()
         movePieceSnd ()
     } 
 }
 function dropPiece (e) {
-  if (e.keyCode===32|| e.keyCode===40) {
+  if (e.keyCode===32|| e.keyCode===40) 
+  
+  {
         moveDownScreen()
         movePieceSnd ()
     }     
@@ -230,6 +229,7 @@ function dropPiece (e) {
 
 document.addEventListener("keyup", keyControls)
 document.addEventListener("keydown", dropPiece)
+
 //fixing rotation of pieces at the edge 
  
 function isAtRight() {
@@ -239,15 +239,18 @@ function isAtRight() {
   function isAtLeft() {
     return currentPiece.some(index=> (currentPosition + index) % rowLength === 0)
   }
-function checkRotatedPiece(P) {
+function checkRotatedPiece(P) 
+{
    P=P || currentPosition 
-    if ((P + 1) % rowLength <4) {
+    if ((P + 1) % rowLength <4) 
+    {
         if (isAtRight()) {
         currentPosition += 1
         checkRotatedPiece(P)
         }
     } 
-    else if (P % rowLength > 5) {
+    else if (P % rowLength > 5) 
+    {
     if (isAtLeft()) {
         currentPosition -= 1
         checkRotatedPiece(P)
@@ -255,20 +258,18 @@ function checkRotatedPiece(P) {
 }
 }
 
-
-
- 
-
   function addScore() {
     for (let i = 0; i < 199; i +=rowLength) {
       const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
-      if(row.every(index => squares[index].classList.contains("filled"))) {
+      if(row.every(index => squares[index].classList.contains("filled"))) 
+      {
         score +=100
         lines += 1
         scoreBoard.innerHTML = score
         lineCount.innerHTML = lines 
 
-        row.forEach(index => {
+        row.forEach(index => 
+        {
           squares[index].classList.remove("filled")
           squares[index].classList.remove("pieces")
           squares[index].style.backgroundColor = ""
@@ -281,83 +282,34 @@ function checkRotatedPiece(P) {
     }
   }
 
-// //variables and functions for the box that shows the thing that comes up 
-// const miniGridSquares = document.querySelectorAll(".mini-grid div")
-//   let currentRotation = 0
-//   //the pieces without rotations
-//   // const nextPiece = [
-//   //   [1, rowLength+1, rowLength*2+1, 2], //lPiece
-//   //   [0, rowLength, rowLength+1, rowLength*2+1], //zPiece
-//   //   [1, rowLength, rowLength+1, rowLength+2], //tPiece
-//   //   [0, 1, rowLength, rowLength+1], //oPiece
-//   //   [1, rowLength+1, rowLength*2+1, rowLength*3+1] //iPiece
-//   // ]
-
-//   //display the shape in the mini-grid display
-//   function displayPiece() {
-//     miniGridSquares.forEach(div => {
-//       div.classList.remove("pieces")
-//       div.style.backgroundColor = ""
-//     })
-//     nextPiece.forEach( index => {
-//       miniGridSquares[currentPosition + index].classList.add("pieces")
-//       miniGridSquares[currentPosition + index].style.backgroundColor = ""
-//     })
-//   }
-
  function nextStep () {
-    if (timerId) { 
+    if (timerId) 
+    { 
       clearInterval(timerId)
       timerId = null 
-    } else {
-      drawPiece()
-      timerId = setInterval(moveDownScreen, 650)
-      nextRandom = Math.floor(Math.random()*gamePieces.length)
-      // displayShape()
-    }}
-    
-
-  startBtn.addEventListener("click", nextStep)
-//This is a part of the game I couldn't get to work
-  // const displaySquares = document.querySelectorAll(".mini-grid div")
-  // const rowLength = 10
-  // const displayIndex = 0
-
-
-  //the pieces without rotations
-  // const upNextPieces = [
-  //   [1, rowLength+1, rowLength*2+1, 2], //lTetromino
-  //   [0, rowLength, rowLength+1, rowLength*2+1], //zTetromino
-  //   [1, rowLength, rowLength+1, rowLength+2], //tTetromino
-  //   [0, 1, rowLength, rowLength+1], //oTetromino
-  //   [1, rowLength+1, rowLength*2+1, rowLength*3+1] //iTetromino
-  // ]
-
-  //display the shape in the mini-grid display
-  // function displayShape() {
-  //   //remove any trace of a tetromino form the entire grid
-  //   displaySquares.forEach(square => {
-  //     square.classList.remove("pieces")
-  //     square.style.backgroundColor = ""
-  //   })
-  //   nextPiece.forEach( index => {
-  //     displaySquares[currentPosition + index].classList.add("pieces")
-  //     displaySquares[currentPosition + index].style.backgroundColor = "rebeccapurple"
-  //   })
-  // }
-
-
-   function levelUp2 () {
-    if (timerId) { 
-      clearInterval(timerId)
-      timerId = null 
-    } else {
+    } else 
+    {
       drawPiece()
       timerId = setInterval(moveDownScreen, 500)
       nextRandom = Math.floor(Math.random()*gamePieces.length)
-      document.getElementById("level").innerHTML=2
-      // displayShape()
-    }}
+    }
+    }
+    
+  startBtn.addEventListener("click", nextStep)
+
+
+   function levelUp2 () {
+    if (timerId) 
+    { 
+      clearInterval(timerId)
+      timerId = null 
+    } 
+    else {
+      drawPiece()
+      timerId = setInterval(moveDownScreen, 400)
+      nextRandom = Math.floor(Math.random()*gamePieces.length)
+    }
+    }
 
   level2Btn.addEventListener("click", levelUp2)
  
@@ -367,10 +319,8 @@ function checkRotatedPiece(P) {
       timerId = null 
     } else {
       drawPiece()
-      timerId = setInterval(moveDownScreen, 400)
+      timerId = setInterval(moveDownScreen, 200)
       nextRandom = Math.floor(Math.random()*gamePieces.length)
-      document.getElementById("level").innerHTML=3
-      // displayShape()
     }}
     
     level3Btn.addEventListener("click", levelUp3)
@@ -378,20 +328,19 @@ function checkRotatedPiece(P) {
 
   function undrawBoard () {
   squares.forEach(index=> {
- // squares[index].classList.remove("pieces")
+
   index.classList.remove("pieces")
 
-  // squares[index].classList.remove("filled")
   index.classList.remove("filled")
 
-  // squares[index].style.backgroundColor = ""
   index.style.backgroundColor = ""
     }
 )
   score = 0
   lines = 0
   scoreBoard.innerHTML = score
-  lineCount.innerHTML = lines }
+  lineCount.innerHTML = lines
+ }
 
 
   function resetGame() {
@@ -402,28 +351,21 @@ function checkRotatedPiece(P) {
   
   resetBtn.addEventListener("click", resetGame)
 
-// function addLevel2() {
-//         const newButton = document.createElement("button")
-//         newButton.innerHTML = "Level 2"
-//         document.getElementById("btn-menu").appendChild(newButton)
-//         newButton.classList.add("btn")
-//         const level2Btn = document.querySelector(".level-two")
-//       }
 
 
   function endGame() {
-    if (currentPiece.some(index=> currentPosition+index<rowLength*3)) {
-      // const endGameMessage = document.getElementById("winning-info")
-      // endGameMessage.innerHTML = `Game over. You scored ${score} points and created ${lines} lines. Wanna try again? Click "Reset Board" then chosen level button twice. `
+    if (currentPiece.some(index=> currentPosition+index<rowLength*3)) 
+    {
       clearInterval(timerId)
       gameOverLose()
-      }
-      else if (score===1000) {
-        // endGameMessage.innerHTML = `Amazing! You completed a level. Have a go at the next level!`
+       winLoseMessage.innerHTML = `Game over. You scored ${score} points and created ${lines} lines. Wanna try again? Click "Reset Board" then your chosen level button twice. `
+  }
+      else if (score===1000) 
+      {
         clearInterval(timerId)
-        winSnd()
+        winSnd()}
+        winLoseMessage.innerHTML = `Amazing! You completed a level. Have a go at the next level!`
       }
-      
-     }
+      }
 
 
