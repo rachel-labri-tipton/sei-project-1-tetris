@@ -46,7 +46,7 @@ Each movement of a piece has a sound function except when a piece lands on anoth
 
 
 Future versions: 
-I would like to build in a function that changes the color of the screen when the level is changed and a function that draws the next piece in a small grid next to the board. I worked on this for awhile, but decided to let it go as the deadline for the project was approaching.
+I would like to build in a function that changes the color of the screen when the level is changed and a function that draws the next piece in a small grid next to the board. I worked on this for awhile, but decided to let it go as the deadline for the project was approaching. On future versions, I'd like to create a drop immediately key with the space bar, but I also couldn't figure that out. 
 
 
 
