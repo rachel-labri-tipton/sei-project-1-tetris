@@ -13,10 +13,10 @@ The game is built around the following functions:
 
 DRAWING THE PIECES
 
--drawPiece()
--undrawPiece()
--moveDownScreen()
--stopMovement()
+drawPiece()
+undrawPiece()
+moveDownScreen()
+stopMovement()
 
 MOVING THE PIECES
 
