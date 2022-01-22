@@ -5,38 +5,37 @@ Hi there, this is my first full coding project completed for the the **General A
 
 Tetris is a classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might of played it on your GameBoy. The game requires players to rotate and move falling Tetris pieces, tetriminoes (each piece is made of 4 blocks). Players clear lines by completing horizontal rows of blocks without empty cells. If the pieces reach the top, the game is over. 
 
-I've named my game **Tetris 2.022**. In my game, if the pieces reach the top, the game ends and the player is prompted to play again. If the player scores 1,000 on a certain level, they "win" and are asked to try another level. Before starting to code, I read about the game and researched different approaches to handling the drawing of the pieces and their movement. I decided to go with a set of arrays that built the tetriminoes as arrays filled in by applying a specific class. 
+I've named my game **Tetris 2.022**. In my game, if the pieces reach the top, the game ends and the player is prompted to play again. If the player scores 1,000 on a certain level, they "win" and are asked to try another level. Before starting to code, I read about the game and researched different approaches to handling the drawing of the pieces and their movement. 
 
 
-
-## THE LOGIC BEHIND THE GAME 
+### THE LOGIC BEHIND THE GAME 
 
 The game is built around the following functions: 
 
-### DRAWING THE PIECES
+#### DRAWING THE PIECES
 
-drawPiece()
-undrawPiece()
-moveDownScreen()
-stopMovement()
+- drawPiece()
+- undrawPiece()
+- moveDownScreen()
+- stopMovement()
 
-### MOVING THE PIECES
+#### MOVING THE PIECES
 
-moveLeft()
-moveRight()
-rotatePiece()
+- moveLeft()
+- moveRight()
+- rotatePiece()
 
-### FIXING ROTATION OF PIECES AT THE EDGE OF THE BOARD
+#### FIXING ROTATION OF PIECES AT THE EDGE OF THE BOARD
 
-isAtRight()
-isAtLeft()
-checkRotatedPiece() 
+- isAtRight()
+- isAtLeft()
+- checkRotatedPiece() 
 
-### SCORE AND LINE COUNT 
+#### SCORE AND LINE COUNT 
 
-addScore()
+- addScore()
 
-### LEVELS:
+#### LEVELS:
 - this part of the code is repetitive, but I didn't find time to make it more elegant
 - nextStep() (original play function)
 - levelUp2() (time interval increased)
@@ -44,22 +43,33 @@ addScore()
 
 ### ENDING PLAY 
 
-endGame()   
-resetGame()
-undrawBoard()
+- endGame()   
+- resetGame()
+- undrawBoard()
 
 
 ### SOUND FUNCTIONALITY
 
-Each movement of a piece has a sound function except when a piece lands on another piece. This part of the code is a bit repetitive as well. As I was adding this at the end, it was working, so I went with it. I've also added a button to play the original Tetris Game. I didn't manage to get the button to toggle play and pause. 
+- each movement of a piece has a sound
+- button to play the original Tetris song
 
 ### THE FUN STUFF
 
-What I loved from the outset of this project was observing and developing my process for taking on a challenge like this one. From researching different approaches to the game to reading about its history, I had lots of fun learning and then making clear decisions. Figuring out the puzzle of mapping arrays onto a bigger array ultimately proved fun if not a bit challenging. Adding styling and sound was particularly enjoyable. In addition to that, I found that finding a stopping point and tying up loose ends, cleaning up my code a bit was an enjoyable part of the process. 
+I loved the following about this project:
+
+- developing a process for taking on this type of project 
+- researching different approaches to the game and reading up on its origin story 
+- figuring out the puzzle of mapping arrays onto a bigger array 
+- adding styling and sound 
+- finding a stopping point and tying up loose ends 
 
 ### FUTURE VERSIONS
 
-I would like to build in a function that changes the color of the screen when the level is changed and a function that draws the next piece in a small grid next to the board. I worked on this for awhile, but decided to let it go as the deadline for the project was approaching. On future versions, I'd like to create a drop immediately key with the space bar, but I also couldn't figure that out. 
+I would like a future version of this game to include the following: 
+- function that changes the color of the screen when the level is changed 
+- option for the player to play for a high score
+- function that draws the upcoming piece in a small grid next to the board, something I worked on for awhile, but decided to let it go as the deadline for the project was approaching 
+- function that lets a piece drop immediately with the space bar
 
 
 
