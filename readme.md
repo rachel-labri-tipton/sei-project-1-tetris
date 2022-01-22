@@ -1,4 +1,4 @@
-**Tetris 2.022**
+#**Tetris 2.022**
 
 Hi there, this is my first full coding project completed for the the General Assembly Software Engineering Immersive Flex Bootcamp (Nov 2021 - May 2022). 
 
