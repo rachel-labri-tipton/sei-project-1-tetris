@@ -65,17 +65,6 @@ h2 {
   flex-direction: row-reverse;
 }
 
-/* .mini-grid {
-  display: flex;
-  width: 100px;
-  height: 200px;
-  flex-direction: row;
-  background-color: #00587a
-} */
-
-/* .game-board {
-  border: solid 2px;
-} */
  
 .btn {
   background-color: #96eab7;
@@ -93,17 +82,3 @@ h2 {
 
 
 
-/* .first-color { 
-	background: #7b99fa; 
-}
-	
-.second-color { 
-	background: #53cdd8; 
-}
-
-.third-color { 
-	background: #96eab7; 
-}
-
-.fourth-color { 
-	background: #f1f3b8;  */
