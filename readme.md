@@ -41,19 +41,19 @@ The game is built around the following functions:
 - levelUp2() (time interval increased)
 - levelUp3() (time interval increased)
 
-### ENDING PLAY 
+#### ENDING PLAY 
 
 - endGame()   
 - resetGame()
 - undrawBoard()
 
 
-### SOUND FUNCTIONALITY
+#### SOUND FUNCTIONALITY
 
 - each movement of a piece has a sound
 - button to play the original Tetris song
 
-### THE FUN STUFF
+#### THE FUN STUFF
 
 I loved the following about this project:
 
@@ -63,7 +63,7 @@ I loved the following about this project:
 - adding styling and sound 
 - finding a stopping point and tying up loose ends 
 
-### FUTURE VERSIONS
+#### FUTURE VERSIONS
 
 I would like a future version of this game to include the following: 
 - function that changes the color of the screen when the level is changed 
