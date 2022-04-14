@@ -7,6 +7,7 @@ Tetris is a classic arcade game created in 1984 by Alexey Pajitnov. If you're a 
 
 I've named my game **Tetris 2.022**. In my game, if the pieces reach the top, the game ends and the player is prompted to play again. If the player scores 1,000 on a certain level, they "win" and are asked to try another level. Before starting to code, I read about the game and researched different approaches to handling the drawing of the pieces and their movement. 
 
+![](project-1-gif-1.gif)
 
 ### THE LOGIC BEHIND THE GAME 
 
