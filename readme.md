@@ -1,9 +1,9 @@
 
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1:  **Tetris 2.022**
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1:  **Tetris 2.022**
 
-Hi there, this is my first full coding project completed for the the **General Assembly Software Engineering Immersive Flex Bootcamp** (Nov 2021 - May 2022). 
+Hi there, this is my first full coding project completed for the the **General Assembly Software Engineering Part-Time Bootcamp** (Nov 2021 - May 2022). 
 
-Tetris is a classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might of played it on your GameBoy. The game requires players to rotate and move falling Tetris pieces, tetriminoes (each piece is made of 4 blocks). Players clear lines by completing horizontal rows of blocks without empty cells. If the pieces reach the top, the game is over. 
+Tetris is a classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might of played it on your GameBoy. The game requires players to rotate and move falling Tetris pieces, tetriminoes (pieces made of 4 blocks). Players clear lines by completing horizontal rows of blocks where there are no empty cells. If the pieces reach the top, the game is over. 
 
 I've named my game **Tetris 2.022**. In my game, if the pieces reach the top, the game ends and the player is prompted to play again. If the player scores 1,000 on a certain level, they "win" and are asked to try another level. Before starting to code, I read about the game and researched different approaches to handling the drawing of the pieces and their movement. 
 
