@@ -44,13 +44,30 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
 
 ## DEVELOPMENT PROCESS
 
-I broke the work into stages for myself. 
-- Phase I: 
+Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I broke the work into phases that seemed to make making the game doable in the 2 weeks we had to work. 
+
+- Phase I: Research 
+- Phase II: Drawing, Rotating and Moving the pieces
+
+- Phase III: Managing collisions and movement a the edge of the board
+- Phase IV: Keeping score and ending the game + adding levels
+- Phase V: Adding Sound Effects
+- Phase VI: Wrapping up loose ends and cleaning up my coade 
 
 #### DRAWING THE PIECES
 
 - drawPiece()
+```
+function drawPiece() {
+  currentPiece.forEach(index => {
+    squares[currentPosition + index].classList.add("pieces")
+    squares[currentPosition + index].style.backgroundColor = color[randomPiece]
+  })
+}
+
+```
 - undrawPiece()
+
 - moveDownScreen()
 - stopMovement()
 
