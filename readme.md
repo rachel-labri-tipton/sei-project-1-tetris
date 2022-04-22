@@ -23,7 +23,7 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
 - Sound Website 
 - Netlify
 
-#You can play the deployed version here:
+# You can play the deployed version here:
 
 [Tetris 2.022](https://elegant-murdock-a314ad.netlify.app/)
 
