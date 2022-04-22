@@ -23,7 +23,7 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
 - Sound Website 
 - Netlify
 
-# You can play the deployed version here:
+## You can play the deployed version here:
 
 [Tetris 2.022](https://elegant-murdock-a314ad.netlify.app/)
 
@@ -44,18 +44,20 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
   - There are 3 level buttons that increase teh speed at which the tetriminoes fall.
   - Once you've reached 1000 points at each level, the game prompts you try the next level. 
 
-## DEVELOPMENT PROCESS
+## My Process
 
 Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I broke the work into phases that seemed to make making the game doable in the 2 weeks we had to work. 
 
 - Phase I: Research 
-- I read several  articles and watched a few tutorials about Tetris to get an idea of how I'd like to set up my game. I settled on using a grid where I would map the pieces as arrays. 
-
 - Phase II: Setting up the Grid, Drawing, Rotating and Moving the pieces
 - Phase III: Managing collisions and movement a the edge of the board
 - Phase IV: Keeping score and ending the game + adding levels
 - Phase V: Adding Sound Effects
 - Phase VI: Wrapping up loose ends and cleaning up my coade 
+
+## Phase I: Research
+
+- I read several  articles and watched a few tutorials about Tetris to get an idea of how I'd like to set up my game. I settled on using a grid where I would map the pieces as arrays. 
 
 ## PHASE II: Setting up the Grid, Drawing, Rotating and Moving the pieces
 
@@ -127,13 +129,14 @@ function moveDownScreen() {
 }
 
 ```
+
 ### ROTATING AND MOVING THE PIECES
 
 - moveLeft()
 - moveRight()
 - rotatePiece()
 
-### Phase III: Managing collisions and movement a the edge of the board
+## Phase III: Managing collisions and movement a the edge of the board
 
 stopMovement() is the function that handles collisions in the game. if a piece has a piece that contains the class filled, then all of the pieces are filled. There is a row at the bottom of the grid with a class "bottom" that also operates with this function. My undrawBoard() function clears out the class "filled", so I needed to find a way to prevent pieces from falling off the bottom of the grid. This was one of the challenges I enjoyed solving in the code. 
 
@@ -160,7 +163,7 @@ function stopMovement() {
 - isAtLeft()
 - checkRotatedPiece() 
 
-#### Phase IV: Keeping score and ending the game + adding levels
+### Phase IV: Keeping score and ending the game + adding levels
 
 ```
 function addScore() {
@@ -269,6 +272,9 @@ function endGame() {
 }
 
 ```
+
+## Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
+
 ### THE FUN STUFF
 
 The following are apects of the project that I had fun with: 
