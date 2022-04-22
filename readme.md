@@ -227,7 +227,7 @@ function keyControls(e) {
 
 ```
 
-### Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
+## Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
 
 - I tried to make sure I was done with all major features one or two days before we were to present the project. This allowed me to have time to clean up my code and leave a few comments for my future self. It also meant I did not work right up until the deadline and had time to reflect on what had worked and hadn't worked and what I would do differently. Below are a few takeaways. 
 
