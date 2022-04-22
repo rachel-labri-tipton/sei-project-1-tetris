@@ -46,23 +46,22 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
 
 ## My Process
 
-Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I broke the work into phases that seemed to make making the game doable in the 2 weeks we had to work. 
+Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I broke the work into phases that seemed to make making the game doable in the 2 weeks I had to work. 
 
 - Phase I: Research 
 - Phase II: Setting up the Grid, Drawing, Rotating and Moving the pieces
 - Phase III: Managing collisions and movement a the edge of the board
-- Phase IV: Keeping score and ending the game + adding levels
+- Phase IV: Keeping score
 - Phase V: Adding Sound Effects
-- Phase VI: Wrapping up loose ends and cleaning up my coade 
+- Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
 
 ## Phase I: Research
 
-- I read several  articles and watched a few tutorials about Tetris to get an idea of how I'd like to set up my game. I settled on using a grid where I would map the pieces as arrays. 
+I took a day or two to read several  articles and watched a few tutorials about coding Tetris to get an idea of how I'd like to set up my game. I settled on using a grid where tetriminoes were displayed as arrays of blocks on the grid that were drawn and redrawn as they moved down the grid.  
 
-## PHASE II: Setting up the Grid, Drawing, Rotating and Moving the pieces
+## Phase II: Setting up the grid and drawing the pieces. 
 
-
-Setting up the grid. 
+Here is the line of code that set up my CSS grid on which the game would be played. 
 
 ```
 const grid = document.querySelector(".grid")
@@ -72,15 +71,15 @@ let squares = Array.from(document.querySelectorAll(".grid div"))
 
 The Pieces are set up with a series of arrays mapped onto the array of divs in the grid. the Pieces are continuously redrawn on the board so all orientations of the pieces are housed in one constant/ the version of the piece that appears at the start of its journey down the screen will be rotation index[0].  
 
-Here are is an example of one of the pieces and the lines of code that randomizes which piece drops. 
+I decided to get the tPiece moving down the board first. Once the functions were in place for moving left and right and rotating the tpiece were in place, I started with randomization of the other pieces. 
 
 ```
 
-const lPiece = [
-  [1, rowLength + 1, rowLength * 2 + 1, 2],
-  [rowLength, rowLength + 1, rowLength + 2, rowLength * 2 + 2],
-  [1, rowLength + 1, rowLength * 2 + 1, rowLength * 2],
-  [rowLength, rowLength * 2, rowLength * 2 + 1, rowLength * 2 + 2]
+const tPiece = [
+  [1, rowLength, rowLength + 1, rowLength + 2],
+  [1, rowLength + 1, rowLength + 2, rowLength * 2 + 1],
+  [rowLength, rowLength + 1, rowLength + 2, rowLength * 2 + 1],
+  [1, rowLength, rowLength + 1, rowLength * 2 + 1],
 ]
 
 const gamePieces = [lPiece, zPiece, tPiece, oPiece, iPiece]
@@ -93,9 +92,8 @@ let currentPiece = gamePieces[randomPiece][currentRotation]
 
 
 ```
+The following functions show drawing and undrawing the piece as it moves down the screen as well as the nextStep() function that automatically moves the piece down the grid at a set time interval and is called when a player clicks the Level 1 button. 
 
-Drawing the pieces 
-drawPiece() is a function that draws the first iteration of the first piece of the first array and a function that selects a random iteration of the piece. 
 ```
 
 function drawPiece() {
@@ -115,11 +113,6 @@ function undrawPiece() {
   })
 }
 
-```
-moveDownScreen() does what it says by moving the piece down the screen. 
-
-```
-
 function moveDownScreen() {
   undrawPiece()
   currentPosition += rowLength
@@ -128,18 +121,24 @@ function moveDownScreen() {
   console.log(currentPosition, currentPiece)
 }
 
+function nextStep() {
+  if (timerId) {
+    clearInterval(timerId)
+    timerId = null
+  } else {
+    drawPiece()
+    timerId = setInterval(moveDownScreen, 500)
+    nextRandom = Math.floor(Math.random() * gamePieces.length)
+  }
+}
+
+startBtn.addEventListener("click", nextStep)
+
 ```
-
-### ROTATING AND MOVING THE PIECES
-
-- moveLeft()
-- moveRight()
-- rotatePiece()
 
 ## Phase III: Managing collisions and movement a the edge of the board
 
 stopMovement() is the function that handles collisions in the game. if a piece has a piece that contains the class filled, then all of the pieces are filled. There is a row at the bottom of the grid with a class "bottom" that also operates with this function. My undrawBoard() function clears out the class "filled", so I needed to find a way to prevent pieces from falling off the bottom of the grid. This was one of the challenges I enjoyed solving in the code. 
-
 
 ```
 
@@ -159,12 +158,9 @@ function stopMovement() {
 
 ```
 
-- isAtRight()
-- isAtLeft()
-- checkRotatedPiece() 
+## Phase IV: Keeping score 
 
-### Phase IV: Keeping score and ending the game + adding levels
-
+Another part of the game I found interesting was putting in place the function that cleared out a full row. Here's what it looks like. I personally also love the sound I chose for when a person scores. Here is the addScore() function.
 ```
 function addScore() {
   for (let i = 0; i < 199; i += rowLength) {
@@ -188,33 +184,11 @@ function addScore() {
   }
 }
 
-
 ```
 
-#### LEVELS:
+## Phase V: Adding Sound Effects
 
-nextStep() (original play function) is the original play function. To add levels, I simply wrote functions that increased the time interval that timerId was set to. 
-
-```
-
-function nextStep() {
-  if (timerId) {
-    clearInterval(timerId)
-    timerId = null
-  } else {
-    drawPiece()
-    timerId = setInterval(moveDownScreen, 500)
-    nextRandom = Math.floor(Math.random() * gamePieces.length)
-  }
-}
-
-startBtn.addEventListener("click", nextStep)
-
-```
-- levelUp2() (time interval increased)
-- levelUp3() (time interval increased)
-
-### Phase V: Adding Sound Effects
+Adding sound to the game proved to be a lot of fun. I created a function for each sound. For example, movePieceSnd() is the sound when the piece moves, rotatePieceSnd() when it rotates. 
 
 ```
 function movePieceSnd(event) {
@@ -231,11 +205,9 @@ function rotatePieceSnd(event) {
 
 ```
 
-and then called the function within keyControls(e), which moves the pieces and calls the sound function on keyUp. I didn't know about keyCodes, so that was an interesting discovery during this project. 
+I then passed these functions into a keyControls() function which moves the pieces and calls the sound function on keyUp. I didn't know about keyCodes, so that was an interesting discovery during this project. 
 
 ```
-
-
 function keyControls(e) {
   if (e.keyCode === 37) {
     moveLeft()
@@ -255,27 +227,11 @@ function keyControls(e) {
 
 ```
 
-### ENDING PLAY 
+### Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
 
-```
-function endGame() {
-  if (currentPiece.some(index => currentPosition + index < rowLength * 3)) {
-    clearInterval(timerId)
-    gameOverLose()
-    winLoseMessage.innerHTML = `Game over. You scored ${score} points and created ${lines} lines. You need ${10 - lines} more lines to complete this level. Wanna try again? Click "Reset Board" then your chosen level button twice. `
-  }
-  else if (score === 1000) {
-    clearInterval(timerId)
-    winSnd()
-    winLoseMessage.innerHTML = `Amazing! You completed a level. You scored ${score} points and created ${lines} lines. Have a go at the next level! Click "Reset Board" then your chosen level button twice.`
-  }
-}
+- I tried to make sure I was done with all major features one or two days before we were to present the project. This allowed me to have time to clean up my code and leave a few comments for my future self. It also meant I did not work right up until the deadline and had time to reflect on what had worked and hadn't worked and what I would do differently. Below are a few takeaways. 
 
-```
-
-## Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
-
-### THE FUN STUFF
+## Fun Stuff
 
 The following are apects of the project that I had fun with: 
 
@@ -285,12 +241,12 @@ The following are apects of the project that I had fun with:
 - Adding styling and sound => I really enjoyed choosing a fun font and sound effects for my game.
 - Finding a stopping point and tying up loose ends of the game the day before I needed to present.. 
 
-### CHALLENGES 
+## Challenges 
 
  - In some versions of tetris that I looked at, the next piece to drop is shown in a small grid to the side of the playing board. I worked on this feature but decided to let this stretch goal go as the deadline for the project approached.
  - Despite spending several hours working on it and time spent with my instructors, I could not get the button that plays the Tetris theme song to stop once it started. 
 
-### FUTURE VERSIONS
+## If I'd had more time...
 
 If I'd had more time on this project, here's what I'd have worked on: 
 
