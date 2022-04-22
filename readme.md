@@ -25,7 +25,7 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
 
 #You can play the deployed version here:
 
-![](https://elegant-murdock-a314ad.netlify.app/)
+[Tetris 2.022](https://elegant-murdock-a314ad.netlify.app/)
 
 
 ## Brief
@@ -57,7 +57,7 @@ Since this was the first project that I'd ever coded, I took time to think about
 - Phase V: Adding Sound Effects
 - Phase VI: Wrapping up loose ends and cleaning up my coade 
 
-#### PHASE II: Setting up the Grid, Drawing, Rotating and Moving the pieces
+## PHASE II: Setting up the Grid, Drawing, Rotating and Moving the pieces
 
 
 Setting up the grid. 
@@ -126,14 +126,14 @@ function moveDownScreen() {
   console.log(currentPosition, currentPiece)
 }
 
-
-#### ROTATING AND MOVING THE PIECES
+```
+### ROTATING AND MOVING THE PIECES
 
 - moveLeft()
 - moveRight()
 - rotatePiece()
 
-#### Phase III: Managing collisions and movement a the edge of the board
+### Phase III: Managing collisions and movement a the edge of the board
 
 stopMovement() is the function that handles collisions in the game. if a piece has a piece that contains the class filled, then all of the pieces are filled. There is a row at the bottom of the grid with a class "bottom" that also operates with this function. My undrawBoard() function clears out the class "filled", so I needed to find a way to prevent pieces from falling off the bottom of the grid. This was one of the challenges I enjoyed solving in the code. 
 
@@ -211,7 +211,7 @@ startBtn.addEventListener("click", nextStep)
 - levelUp2() (time interval increased)
 - levelUp3() (time interval increased)
 
-#### Phase V: Adding Sound Effects
+### Phase V: Adding Sound Effects
 
 ```
 function movePieceSnd(event) {
@@ -252,8 +252,9 @@ function keyControls(e) {
 
 ```
 
-#### ENDING PLAY 
-   
+### ENDING PLAY 
+
+```
 function endGame() {
   if (currentPiece.some(index => currentPosition + index < rowLength * 3)) {
     clearInterval(timerId)
@@ -267,7 +268,8 @@ function endGame() {
   }
 }
 
-#### THE FUN STUFF
+```
+### THE FUN STUFF
 
 The following are apects of the project that I had fun with: 
 
@@ -277,12 +279,12 @@ The following are apects of the project that I had fun with:
 - Adding styling and sound => I really enjoyed choosing a fun font and sound effects for my game.
 - Finding a stopping point and tying up loose ends of the game the day before I needed to present.. 
 
-#### CHALLENGES 
+### CHALLENGES 
 
  - In some versions of tetris that I looked at, the next piece to drop is shown in a small grid to the side of the playing board. I worked on this feature but decided to let this stretch goal go as the deadline for the project approached.
  - Despite spending several hours working on it and time spent with my instructors, I could not get the button that plays the Tetris theme song to stop once it started. 
 
-#### FUTURE VERSIONS
+### FUTURE VERSIONS
 
 If I'd had more time on this project, here's what I'd have worked on: 
 
