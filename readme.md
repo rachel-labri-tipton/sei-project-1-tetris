@@ -2,15 +2,32 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1:  **Tetris 2.022**
 
 
-Hi there, this is my first full coding project completed for the the **General Assembly Software Engineering Immersive Part-Time Course** (Nov 2021 - May 2022). 
+Hi there, this is my first full coding project completed for the the **General Assembly Software Engineering Immersive Part-Time Course** (Nov 2021 - May 2022). This project was a solo project.
+
+
 
 **Timeframe**
 
 14 days (35 course hours)
 
+
 # Goal 
 
-After getting my feet wet with JavaScript, I was asked asked to build a browser-based game of our choice using vanilla JavaScript. 
+After getting my feet wet with JavaScript, I was asked asked to build a browser-based game of my choice using vanilla JavaScript. 
+
+# Project Brief
+
+My game needed to do the following:
+
+- **Render in the browser**
+- **Be built on a grid**
+- **Possess logic for winning** and **visually display which player won**
+- **Allow for restarting the game** without reloading the browser
+- **Include separate HTML / CSS / JavaScript files**
+- Demonstrate **KISS (keep it stupid simple)** and **DRY** code principles
+- Use **Javascript** for **DOM manipulation** 
+- **Be deployed online**: [You can check it out here.](https://elegant-murdock-a314ad.netlify.app/)
+- Use **semantic markup** for HTML and CSS (adhere to best practices)
 
 # Technologies Used 
 
@@ -28,8 +45,8 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
 [Tetris 2.022](https://elegant-murdock-a314ad.netlify.app/)
 
 
-## Brief
- **Tetris 2.022** is my version of the classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might of played it on your GameBoy. Tetris requires players to rotate and move falling Tetris pieces,tetriminoes, as their called. Players clear lines by completing horizontal rows of blocks where there are no empty cells. If the pieces reach the top of the board, the game is over. 
+## Tetris 2.022
+ **Tetris 2.022** is my version of the classic arcade game created in 1984 by Alexey Pajitnov. Tetris requires players to rotate and move falling Tetris pieces, tetrominoes, as their called. Players clear lines by completing horizontal rows of blocks where there are no empty cells. If the pieces reach the top of the board, the game is over. 
 
 
 ![](images/project-1-gif-1.gif)
@@ -40,13 +57,15 @@ After getting my feet wet with JavaScript, I was asked asked to build a browser-
   - Up Arrow = rotates a piece
   - Left Arrow = moves a piece left
   - Down Arrow & Space Bar = moves a piece down
-  - Each row of blocks you fill is 100 points.
-  - There are 3 level buttons that increase teh speed at which the tetriminoes fall.
+  - Each row of blocks the player fills is worth 100 points.
+  - There are 3 level buttons that increase the speed at which the tetrominoes fall.
   - Once you've reached 1000 points at each level, the game prompts you try the next level. 
 
-## My Process
+## Planning
 
-Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I broke the work into phases that seemed to make making the game doable in the 2 weeks I had to work. 
+Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I did not use any planning apps, such as Trello, but decided in all following projects to use some form of planning app. 
+ 
+I broke the work into phases which made developing the game doable in the 2 weeks I had to work: 
 
 - Phase I: Research 
 - Phase II: Setting up the Grid, Drawing, Rotating and Moving the pieces
@@ -57,7 +76,7 @@ Since this was the first project that I'd ever coded, I took time to think about
 
 ## Phase I: Research
 
-I took a day or two to read several  articles and watched a few tutorials about coding Tetris to get an idea of how I'd like to set up my game. I settled on using a grid where tetriminoes were displayed as arrays of blocks on the grid that were drawn and redrawn as they moved down the grid.  
+I took a day or two to read several  articles and watch a few tutorials about coding Tetris to get an idea of how I'd like to set up my game. I settled on using a grid where tetrominoes were displayed as arrays of blocks on the grid that were drawn and redrawn as they moved down the grid.  
 
 ## Phase II: Setting up the grid and drawing the pieces. 
 
@@ -69,9 +88,9 @@ let squares = Array.from(document.querySelectorAll(".grid div"))
 
 ```
 
-The Pieces are set up with a series of arrays mapped onto the array of divs in the grid. the Pieces are continuously redrawn on the board so all orientations of the pieces are housed in one constant/ the version of the piece that appears at the start of its journey down the screen will be rotation index[0].  
+The Pieces are set up with a series of arrays mapped onto the array of divs in the grid. The Pieces are continuously redrawn on the board so all orientations of the pieces are housed in one constant. The version of the piece that appears at the start of its journey down the screen is always rotation index[0].  
 
-I decided to get the tPiece moving down the board first. Once the functions were in place for moving left and right and rotating the tpiece were in place, I started with randomization of the other pieces. 
+I decided to first get the tPiece moving on the board. Once I was able to move the tPieace, to the left and right and rotate it, I then moved on to working on random generation for the other pieces.
 
 ```
 
@@ -92,7 +111,7 @@ let currentPiece = gamePieces[randomPiece][currentRotation]
 
 
 ```
-The following functions show drawing and undrawing the piece as it moves down the screen as well as the nextStep() function that automatically moves the piece down the grid at a set time interval and is called when a player clicks the Level 1 button. 
+The following functions show drawing and undrawing the piece as it moves down the screen as well as the nextStep() function that automatically moves the piece down the grid at a set time interval and is called when a player clicks the selected level button. 
 
 ```
 
@@ -136,9 +155,9 @@ startBtn.addEventListener("click", nextStep)
 
 ```
 
-## Phase III: Managing collisions and movement a the edge of the board
+## Phase III: Managing collisions and movement at the edge of the board
 
-stopMovement() is the function that handles collisions in the game. if a piece has a piece that contains the class filled, then all of the pieces are filled. There is a row at the bottom of the grid with a class "bottom" that also operates with this function. My undrawBoard() function clears out the class "filled", so I needed to find a way to prevent pieces from falling off the bottom of the grid. This was one of the challenges I enjoyed solving in the code. 
+stopMovement() is the function that handles collisions in the game. If a piece has a component that contains the class "filled", then all of the pieces are considered to be filled. There is a row at the bottom of the grid with a class "bottom" that also operates with similar logic. My undrawBoard() function clears out the class "filled", so I needed to find a way to prevent pieces from falling off the bottom of the grid. This was one of the challenges I enjoyed solving in the code. 
 
 ```
 
@@ -160,7 +179,7 @@ function stopMovement() {
 
 ## Phase IV: Keeping score 
 
-Another part of the game I found interesting was putting in place the function that cleared out a full row. Here's what it looks like. I personally also love the sound I chose for when a person scores. Here is the addScore() function.
+Another part of the game I found interesting was putting in place the function that cleared out a full row. I personally also love the sound I chose for when a person scores! Here is the addScore() function:
 ```
 function addScore() {
   for (let i = 0; i < 199; i += rowLength) {
@@ -188,7 +207,7 @@ function addScore() {
 
 ## Phase V: Adding Sound Effects
 
-Adding sound to the game proved to be a lot of fun. I created a function for each sound. For example, movePieceSnd() is the sound when the piece moves, rotatePieceSnd() when it rotates. 
+Adding sound to the game proved to be a lot of fun! I created a function for each sound. For example, movePieceSnd() is the sound when the piece moves, rotatePieceSnd() is called when a piece rotates. 
 
 ```
 function movePieceSnd(event) {
@@ -229,7 +248,7 @@ function keyControls(e) {
 
 ## Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
 
-- I tried to make sure I was done with all major features one or two days before we were to present the project. This allowed me to have time to clean up my code and leave a few comments for my future self. It also meant I did not work right up until the deadline and had time to reflect on what had worked and hadn't worked and what I would do differently. Below are a few takeaways. 
+- One or two days before we were to present the project, I tried to make sure I was done with all major features. This allowed me to have time to work on styling, clean up my code, and leave a few comments for my future self. This also meant I did not work right up until the deadline and had time to reflect on what had worked and hadn't worked and what I would do differently. Below are a few takeaways. 
 
 ## Fun Stuff
 
@@ -246,14 +265,22 @@ The following are apects of the project that I had fun with:
  - In some versions of tetris that I looked at, the next piece to drop is shown in a small grid to the side of the playing board. I worked on this feature but decided to let this stretch goal go as the deadline for the project approached.
  - Despite spending several hours working on it and time spent with my instructors, I could not get the button that plays the Tetris theme song to stop once it started. 
 
+## Key learnings 
+- Setting up CSS grid to make a gameboard
+- Using keyCodes for the keyControl() function
+- Spending a good amount of time researching a project before coding it is a great idea
+- Some project ideas, like the nextPiece() feature I wanted to implement that would show the next random tetromino to appear, may take a lot of time but might not make the final cut of a project
+
 ## If I'd had more time...
 
 If I'd had more time on this project, here's what I'd have worked on: 
 
-- Changing the background color of the screen when the level is changed.
+- Changing the background color of the screen when the level changes.
 - Implementing an option for a player to play for a high score that would be saved.
 - Implementing a function that lets a piece drop immediately with the space bar. I worked on this as well but had some difficulty with it so decided it didn't need to be part of my mvp.
 - Figure out how to stop the Tetris theme song.
+
+
 
 
 
