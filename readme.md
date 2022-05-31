@@ -11,11 +11,11 @@ Hi there, this is my first full coding project completed for the the **General A
 14 days (35 course hours)
 
 
-# Goal 
+## Goal 
 
 After getting my feet wet with JavaScript, I was asked asked to build a browser-based game of my choice using vanilla JavaScript. 
 
-# Project Brief
+## Project Brief
 
 My game needed to do the following:
 
@@ -29,7 +29,7 @@ My game needed to do the following:
 - **Be deployed online**: [You can check it out here.](https://elegant-murdock-a314ad.netlify.app/)
 - Use **semantic markup** for HTML and CSS (adhere to best practices)
 
-# Technologies Used 
+## Technologies Used 
 
 - HTML5 with HTML5 audio
 - CSS3 
