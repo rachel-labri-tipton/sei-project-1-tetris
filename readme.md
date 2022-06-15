@@ -36,19 +36,19 @@ My game needed to do the following:
 - Sound Website
 - Netlify
 
-## You can play the deployed version here:
+# Tetris 2.022
+**Tetris 2.022** is my version of the classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might have played it on your GameBoy. 
+Tetris requires players to rotate and move falling Tetris pieces, tetrominoes, as they’re called. Players clear lines by completing horizontal rows of blocks where there are no empty cells. If the pieces reach the top of the board, the game is over.
+
+### You can play the deployed version here:
 
 [Tetris 2.022](https://elegant-murdock-a314ad.netlify.app/)
 
-
-## Tetris 2.022
-**Tetris 2.022** is my version of the classic arcade game created in 1984 by Alexey Pajitnov. If you're a 90's kid, you might have played it on your GameBoy. 
-Tetris requires players to rotate and move falling Tetris pieces, tetrominoes, as they’re called. Players clear lines by completing horizontal rows of blocks where there are no empty cells. If the pieces reach the top of the board, the game is over.
  
 
 
 ![](images/project-1-gif-1.gif)
-## How to Play Tetris 2.022
+### How to Play Tetris 2.022
  - Right Arrow = moves a piece right
  - Up Arrow = rotates a piece
  - Left Arrow = moves a piece left
@@ -57,7 +57,7 @@ Tetris requires players to rotate and move falling Tetris pieces, tetrominoes, a
  - There are 3 level buttons that increase the speed at which the tetrominoes fall.
  - Once you've reached 1000 points at each level, the game prompts you to try the next level.
 
-## Planning
+# Planning
 
 Since this was the first project that I'd ever coded, I took time to think about what the stages of the coding process would be. I did not use any planning apps, such as Trello, but decided in all following projects to use some form of planning app. 
  
@@ -242,11 +242,11 @@ function keyControls(e) {
 
 ```
 
-### Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
+## Phase VI: Wrapping up loose ends, cleaning up my code, and reflecting
 
 - I tried to make sure I was done with all major features one or two days before we were to present the project. This allowed me to have time to clean up my code and leave a few comments for my future self. It also meant I did not work right up until the deadline and had time to reflect on what had worked and hadn't worked and what I would do differently. Below are a few takeaways.
 
-## Fun Stuff
+# Fun Stuff
 
 The following are aspects of the project that I had fun with:
 
@@ -256,19 +256,19 @@ The following are aspects of the project that I had fun with:
 - Adding styling and sound => I really enjoyed choosing a fun font and sound effects for my game.
 - Finding a stopping point and tying up loose ends of the game the day before I needed to present..
 
-## Challenges
+# Challenges
 
 - In some versions of Tetris that I looked at, the next piece to drop is shown in a small grid to the side of the playing board. I worked on this feature but decided to let this stretch goal go as the deadline for the project approached.
 - Despite spending several hours working on it and time spent with my instructors, I could not get the button that plays the Tetris theme song to stop once it started.
  
-## Key learnings
+# Key learnings
 - Setting up CSS grid to make a gameboard
 - Using keyCodes for the keyControl() function
 - Spending a good amount of time researching a project before coding it is a great idea
 - Some project ideas, like the nextPiece() feature I wanted to implement that would show the next random tetromino to appear, may take a lot of time but might not make the final cut of a project
  
 
-## If I'd had more time...
+# If I'd had more time...
 
 If I'd had more time on this project, here's what I'd have worked on:
 
