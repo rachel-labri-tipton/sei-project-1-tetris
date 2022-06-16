@@ -277,8 +277,7 @@ If I'd had more time on this project, here's what I'd have worked on:
 - Implementing a function that lets a piece drop immediately with the space bar. I worked on this as well but had some difficulty with it so decided it didn't need to be part of my mvp.
 - Figure out how to stop the Tetris theme song once it's started playing. 
 
-## What my 8 year-old nephew, Rowan, has to say about Tetris 2.022
-
-*Overall I will say the Tetris is 4.5 out of 5. I love the Tetris game. I thought it was just so much fun, and I thought it was hard too. I loved the sounds.* 🐬  💫  🐳  ✨ 
+## Praise for Tetris 2.022 
+*Overall I will say the Tetris is 4.5 out of 5. I love the Tetris game. I thought it was just so much fun, and I thought it was hard too. I loved the sounds.* 🐬  💫  🐳  ✨ - Rowan, my 8 year-old nephew
 
 
